@@ -1,0 +1,8 @@
+<div class="C_Cell">
+	<% model.cellItems.forEach(function (cellItem) { %>
+		<div class="C_Cell_Item" data-value='<%= cellItem.value %>'>
+			<div class="C_Cell_Icon <%= cellItem.iconClass %>"></div>
+			<span class="C_Cell_Text"><%= cellItem.label %></span>
+		</div>
+	<% }) %>
+</div>

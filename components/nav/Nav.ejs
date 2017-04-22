@@ -1,0 +1,8 @@
+<div class="C_Nav">
+	<% model.navItems.forEach(function (navItem) { %>
+		<div class="C_Nav_Item" data-value='<%= navItem.value %>'>
+			<div class="C_Nav_Icon <%= navItem.iconClass %>"></div>
+			<span class="C_Nav_Text"><%= navItem.label %></span>
+		</div>
+	<% }) %>
+</div>

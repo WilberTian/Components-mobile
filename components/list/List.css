@@ -1,0 +1,8 @@
+.C_List {
+	background: #fff;
+	list-style: none;
+}
+
+.C_ListItemWrapper:not(:first-of-type) {
+    border-top: 1px solid #e1e1e1;
+}

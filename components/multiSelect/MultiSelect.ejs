@@ -1,0 +1,8 @@
+<div class="C_MultiSelect">
+	<% model.options.forEach(function (option) { %>
+		<div class="C_MultiSelect_Item <%= model.selected.indexOf(option.value) > -1 ? 'selected' : ''%>" 
+			 data-value='<%= option.value %>'>
+			 <%= option.label %>
+		</div>
+	<% }) %>
+</div>

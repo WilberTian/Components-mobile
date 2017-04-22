@@ -1,0 +1,23 @@
+.C_Nav {
+	height: 48px;
+	background-color: #333;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+}
+
+.C_Nav .C_Nav_Item {
+	flex: 1;
+	text-align: center;
+}
+
+.C_Nav .C_Nav_Item .C_Nav_Text {
+	color: #a7a7a7;
+	font-size: 12px;
+	display: block;
+}
+
+.C_Nav .C_Nav_Item .C_Nav_Icon {
+	color: #fefefe;
+	font-size: 18px;
+}

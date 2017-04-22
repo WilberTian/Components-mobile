@@ -1,0 +1,8 @@
+<div class="C_Select">
+	<% model.options.forEach(function (option) { %>
+		<div class="C_Select_Item <%= model.selected === option.value ? 'selected' : ''%>" 
+			 data-value='<%= option.value %>'>
+			 <%= option.label %>
+		</div>
+	<% }) %>
+</div>

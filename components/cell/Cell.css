@@ -1,0 +1,46 @@
+.C_Cell {
+	background-color: #fff;
+	overflow: hidden;
+	
+}
+
+.C_Cell .C_Cell_Item {
+	float: left;
+	width: 25%;
+	text-align: center;
+	padding: 24px 0px;
+	position: relative;
+}
+
+.C_Cell .C_Cell_Item .C_Cell_Text {
+	color: #999;
+	display: block;
+}
+
+.C_Cell .C_Cell_Item .C_Cell_Icon {
+	font-size: 20px;
+}
+
+.C_Cell .C_Cell_Item::before {
+	content: '';
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	border-bottom: 1px solid #e1e1e1;
+}
+
+.C_Cell .C_Cell_Item::after {
+	content: '';
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	border-right: 1px solid #e1e1e1;
+}
+
+.C_Cell .C_Cell_Item:nth-of-type(4n)::after {
+	border-right: none;
+}

@@ -1,0 +1,30 @@
+.C_Select {
+	background: #fff;
+	list-style: none;
+}
+
+.C_Select .C_Select_Item {
+	line-height: 34px;
+    padding: 5px 10px;
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.C_Select .C_Select_Item.selected::after {
+	content: '';
+	position: absolute;
+	top: 17px;
+	right: 12px;
+	height: 4px;
+	width: 10px;
+	border: 3px solid orange;
+	border-top: none;
+	border-right: none;
+	transform: rotate(-52deg);
+
+}
+
+.C_Select .C_Select_Item:not(:first-of-type) {
+    border-top: 1px solid #dbdbdb;
+}

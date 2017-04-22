@@ -1,0 +1,5 @@
+<div class="C_Tab">
+	<% model.tabs.forEach(function (tab) { %>
+		<div class="tab-item <%= model.selected == tab.value ? 'active' : ''%>" data-value='<%= tab.value %>'><%= tab.label %></div>
+	<% }) %>
+</div>

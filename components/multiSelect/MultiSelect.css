@@ -1,0 +1,30 @@
+.C_MultiSelect {
+	background: #fff;
+	list-style: none;
+}
+
+.C_MultiSelect .C_MultiSelect_Item {
+	line-height: 34px;
+    padding: 5px 10px;
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.C_MultiSelect .C_MultiSelect_Item.selected::after {
+	content: '';
+	position: absolute;
+	top: 17px;
+	right: 12px;
+	height: 4px;
+	width: 10px;
+	border: 3px solid orange;
+	border-top: none;
+	border-right: none;
+	transform: rotate(-52deg);
+
+}
+
+.C_MultiSelect .C_MultiSelect_Item:not(:first-of-type) {
+    border-top: 1px solid #dbdbdb;
+}
