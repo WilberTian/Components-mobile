@@ -12,18 +12,19 @@ require([
     'jquery',
     'components/list/List',
     'components/list/listItem/textListItem/TextListItem',
+    'components/list/listItem/touchListItem/TouchListItem',
     'components/select/Select',
     'components/multiSelect/MultiSelect',
     'components/nav/Nav',
     'components/tab/Tab',
     'components/cell/Cell',
     'components/modal/Modal',
-], function ($, List, TextListItem, Select, MultiSelect, Nav, Tab, Cell, Modal) {
+], function ($, List, TextListItem, TouchListItem, Select, MultiSelect, Nav, Tab, Cell, Modal) {
 
     // TextList
     var level = ['初级', '中级', '高级'];
 
-    var listItemComponents = level.map(function(item){
+    var textListItemComponents = level.map(function(item){
         return new TextListItem({
             $el: $('<div class="C_ListItemWrapper"></div>'),
             model: {
@@ -34,7 +35,26 @@ require([
     new List({
         $el: $('.text-list'),
         model: {
-            listItems: listItemComponents
+            listItems: textListItemComponents
+        }
+    });
+
+
+    // TouchList
+    var level = ['初级', '中级', '高级'];
+
+    var touchListItemComponents = level.map(function(item){
+        return new TouchListItem({
+            $el: $('<div class="C_ListItemWrapper"></div>'),
+            model: {
+                text: item
+            }
+        })
+    });
+    new List({
+        $el: $('.touch-list'),
+        model: {
+            listItems: touchListItemComponents
         }
     });
 

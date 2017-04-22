@@ -1,6 +1,6 @@
 .C_List {
 	background: #fff;
-	list-style: none;
+	overflow: hidden;
 }
 
 .C_ListItemWrapper:not(:first-of-type) {
