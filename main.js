@@ -2,9 +2,12 @@ require.config({
     paths: {
         jquery: 'vendor/jquery.min',
         text: 'vendor/text',
+        async: 'node_modules/requirejs-plugins/src/async',
         ejs: 'node_modules/ejs/ejs.min',
         moment: 'node_modules/moment/min/moment.min',
-        underscore: 'node_modules/underscore/underscore-min'
+        underscore: 'node_modules/underscore/underscore-min',
+        baidumap: 'http://api.map.baidu.com/api?v=2.0&ak=F2SZlbGkd2LpoOuGCjrLGfWyLcVGPZ4u',
+        bdidumapconvertor: 'http://developer.baidu.com/map/jsdemo/demo/convertor'
     }
 });
 
@@ -19,7 +22,8 @@ require([
     'components/tab/Tab',
     'components/cell/Cell',
     'components/modal/Modal',
-], function ($, List, TextListItem, TouchListItem, Select, MultiSelect, Nav, Tab, Cell, Modal) {
+    'components/map/Map'
+], function ($, List, TextListItem, TouchListItem, Select, MultiSelect, Nav, Tab, Cell, Modal, Map) {
 
     // TextList
     var level = ['初级', '中级', '高级'];
@@ -196,5 +200,10 @@ require([
                 }
             }
         });
+    });
+
+    // Map
+    new Map({
+        $el: $('.map')
     });
 });

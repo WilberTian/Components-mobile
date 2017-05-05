@@ -9,6 +9,7 @@
     "ejs": "^2.5.5",
     "font-awesome": "^4.7.0",
     "moment": "^2.17.1",
+    "requirejs-plugins": "^1.0.2",
     "underscore": "^1.8.3"
   }
 }
