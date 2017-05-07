@@ -26,6 +26,8 @@
 
 		<link rel="stylesheet" href="components/modal/Modal.css"/>
 
+		<link rel="stylesheet" href="components/toastr/Toastr.css"/>
+
 		<link rel="stylesheet" href="components/map/Map.css"/>
 
 		<style>
@@ -36,6 +38,14 @@
 			}
 
 			.show-modal-btn {
+				height: 24px;
+				line-height: 24px;
+				border: 1px solid #007aff;
+				border-radius: 4px;
+				text-align: center;
+			}
+
+			.show-toastr-btn {
 				height: 24px;
 				line-height: 24px;
 				border: 1px solid #007aff;
@@ -63,6 +73,9 @@
 
 		<div class="show-modal-btn">Open modal</div>
 		<div class="modal"></div>
+
+		<div class="toastr"></div>
+    	<div class="show-toastr-btn">Show toastr</div>
 
 		<div class="map"></div>
 	</body>

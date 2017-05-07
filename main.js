@@ -22,8 +22,9 @@ require([
     'components/tab/Tab',
     'components/cell/Cell',
     'components/modal/Modal',
+    'components/toastr/Toastr',
     'components/map/Map'
-], function ($, List, TextListItem, TouchListItem, Select, MultiSelect, Nav, Tab, Cell, Modal, Map) {
+], function ($, List, TextListItem, TouchListItem, Select, MultiSelect, Nav, Tab, Cell, Modal, Toastr, Map) {
 
     // TextList
     var level = ['初级', '中级', '高级'];
@@ -198,6 +199,17 @@ require([
                     console.log('modal was confirmed')
                     modal.destory();
                 }
+            }
+        });
+    });
+
+    // Toastr
+    $('.show-toastr-btn').on('click', function() {
+        new Toastr({
+            $el: $('.toastr'),
+            model: {
+                iconClass: 'fa fa-spin fa-refresh',
+                content: 'Loading...'
             }
         });
     });
