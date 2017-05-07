@@ -11,15 +11,10 @@ define([
 	TouchListItem._view = {
 		template: ejsTpl,
 		events: {
-			'click .C_ListItem': 'listItemClick_event',
 			'touchstart .C_ListItem': 'touchstart_event',
 			'touchmove .C_ListItem': 'touchmove_event',
 			'touchend .C_ListItem': 'touchend_event'
 		}
-	};
-
-	TouchListItem._messages = {
-		LISTITEM_CLICK: 'LISTITEM_CLICK'
 	};
 
 	function TouchListItem(options) {
@@ -28,16 +23,13 @@ define([
 
 	Utils.inherit(TouchListItem, Component);
 
-	TouchListItem.prototype.listItemClick_event = function(e) {
-		this.msgBus.publish('LISTITEM_CLICK', e);
-	}
-
 	TouchListItem.prototype.touchstart_event = function(e) {
 		var self = this;
 		e.preventDefault();
 		
 		self.touchStartX = e.targetTouches[0].pageX;
 		self.touchElTranslateX = $(e.currentTarget).offset().left;
+		self.touchmoved = false;
 	}
 
 	TouchListItem.prototype.touchmove_event = function(e) {
@@ -57,18 +49,21 @@ define([
 				$(e.currentTarget).css('transform', 'translateX(' + self.moveOffset + 'px)');
 			}
 		}
+
+		self.touchmoved = true;
 	}
 
 	TouchListItem.prototype.touchend_event = function(e) {
 		var self = this;
 		e.preventDefault();
 
-		if(self.moveOffset > -45) {
-			$(e.currentTarget).css('transform', 'translateX(0px)');
-		} else {
-			$(e.currentTarget).css('transform', 'translateX(-90px)');
+		if (self.touchmoved) {
+			if(self.moveOffset > -45) {
+				$(e.currentTarget).css('transform', 'translateX(0px)');
+			} else {
+				$(e.currentTarget).css('transform', 'translateX(-90px)');
+			}
 		}
-		
 	}
 
 	return TouchListItem;
