@@ -29,13 +29,22 @@ define([
 
 	Utils.inherit(Modal, Component);
 
+	Modal.prototype.afterMount = function() {
+		self.scrollHelper = Utils.scrollHelper();
+		self.scrollHelper.afterOpen();
+	}
+
 	Modal.prototype.modalConfirm_event = function(e) {
 		var self = this;
 		self.msgBus.publish('MODAL_CONFIRM');
+
+		self.scrollHelper.beforeClose();
 	}
 
 	Modal.prototype.modalCancel_event = function(e) {
 		this.destory();
+
+		self.scrollHelper.beforeClose();
 	}
 
 	return Modal;

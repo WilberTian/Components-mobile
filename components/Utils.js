@@ -38,11 +38,28 @@ define([
 		}
 	}
 
+	function scrollHelper() {
+	    var scrollTop;
+	    return {
+	        afterOpen: function() {
+	            scrollTop = document.scrollingElement.scrollTop;
+	            document.body.classList.add('scroll-helper');
+	            document.body.style.top = -scrollTop + 'px';
+	        },
+	        beforeClose: function() {
+	            document.body.classList.remove('scroll-helper');
+	            // scrollTop lost after set position:fixed, restore it back.
+	            document.scrollingElement.scrollTop = scrollTop;
+	        }
+	    };
+	}
+
 	return {
 		inherit: inherit,
 		guid: guid,
 		logDebugMsg: logDebugMsg,
-		noop: function() {}
+		noop: function() {},
+		scrollHelper: scrollHelper
 	}
 });
 

@@ -23,8 +23,9 @@ require([
     'components/cell/Cell',
     'components/modal/Modal',
     'components/toastr/Toastr',
-    'components/map/Map'
-], function ($, List, TextListItem, TouchListItem, Select, MultiSelect, Nav, Tab, Cell, Modal, Toastr, Map) {
+    'components/map/Map',
+    'components/picker/Picker'
+], function ($, List, TextListItem, TouchListItem, Select, MultiSelect, Nav, Tab, Cell, Modal, Toastr, Map, Picker) {
 
     // TextList
     var level = ['初级', '中级', '高级'];
@@ -218,4 +219,30 @@ require([
     new Map({
         $el: $('.map')
     });
+
+    // Picker
+    var year = [];
+    var startYear = 2000;
+    for(var i = 0; i < 30; i++) {
+        year.push({
+            label: 2000 + i,
+            value: 2000 + i
+        })
+    }
+    $('.show-picker-btn').on('click', function() {
+        var picker = new Picker({
+            $el: $('.picker'),
+            model: {
+                options: year,
+                selected: 1
+            },
+            messages: {
+                'PICKER_CONFIRM': function(data){
+                    console.log('picker was confirmed')
+                    picker.destory();
+                }
+            }
+        });
+    });
+    
 });

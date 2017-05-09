@@ -1,0 +1,21 @@
+<div class="C_Picker">
+	<div class="C_Picker_container">
+		<div class="header">
+			<div class="cancel_btn">Cancel</div>
+			<div class="ok_btn">Ok</div>
+		</div>
+
+		<div class="C_Picker_Options_container">
+			<div class="C_Picker_Options">
+				<% model.options.forEach(function (option) { %>
+					<div class="C_Picker_Item <%= model.selected === option.value ? 'selected' : ''%>" 
+						 data-value='<%= option.value %>'>
+						 <%= option.label %>
+					</div>
+				<% }) %>
+			</div>	
+			<div class="C_Picker_mask"></div>
+			<div class="C_Picker_selected"></div>
+		</div>
+	</div>
+</div>

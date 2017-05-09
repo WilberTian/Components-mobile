@@ -43,8 +43,12 @@ define([
 				self.$toastrItem.remove();
 				clearTimeout(this._autoCloseTimer);
 
+				self.scrollHelper.beforeClose();
 			}, this.model.timeout);
 		}
+
+		self.scrollHelper = Utils.scrollHelper();
+		self.scrollHelper.afterOpen();
 	}
 
 	return Toastr;

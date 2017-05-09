@@ -1,0 +1,124 @@
+.C_Picker {
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.C_Picker .C_Picker_container {
+    position: absolute;
+    bottom: -251px;
+    width: 100%;
+    height: 251px;
+    background-color: #fff;
+}
+
+.C_Picker .C_Picker_container .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    height: 40px;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.C_Picker .C_Picker_container .header .cancel_btn {
+    color: #999;
+    font-size: 24px;
+}
+
+.C_Picker .C_Picker_container .header .ok_btn {
+    color: #1AAD19;
+    font-size: 24px;
+}
+
+.C_Picker .C_Picker_container .C_Picker_Options_container {
+    position: relative;
+    width: 100%;
+    height: 210px;
+}
+
+.C_Picker .C_Picker_container .C_Picker_Options_container .C_Picker_Options{
+    height: 100%;
+}
+
+.C_Picker .C_Picker_container .C_Picker_Options_container .C_Picker_Options .C_Picker_Item {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+
+.C_Picker .C_Picker_container .C_Picker_Options_container .C_Picker_mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    z-index: 3;
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.6)), -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.6));
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.6)), linear-gradient(0deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.6));
+    background-position: top, bottom;
+    background-size: 100% 90px;
+    background-repeat: no-repeat;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+.C_Picker .C_Picker_container .C_Picker_Options_container .C_Picker_selected {
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    left: 0;
+    top: 90px;
+    z-index: 3;
+}
+
+
+.C_Picker .C_Picker_container .C_Picker_Options_container .C_Picker_selected::before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    border-top: 1px solid #E5E5E5;
+    color: #E5E5E5;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+}
+
+.C_Picker .C_Picker_container .C_Picker_Options_container .C_Picker_selected::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-bottom: 1px solid #E5E5E5;
+    color: #E5E5E5;
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+}
+
+.animate-slide-up {
+    -webkit-animation: slideUp ease .3s forwards;
+    animation: slideUp ease .3s forwards;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(0, -100%);
+    }
+}
+
