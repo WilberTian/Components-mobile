@@ -60,8 +60,10 @@ define([
 		if (self.touchmoved) {
 			if(self.moveOffset > -45) {
 				$(e.currentTarget).css('transform', 'translateX(0px)');
+				$(e.currentTarget).css('transition', '.5s');
 			} else {
 				$(e.currentTarget).css('transform', 'translateX(-90px)');
+				$(e.currentTarget).css('transition', '.5s');
 			}
 		}
 	}
