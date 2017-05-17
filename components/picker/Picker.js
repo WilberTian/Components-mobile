@@ -38,14 +38,27 @@ define([
 	}
 
 	Picker.prototype.cancelClick_event = function(e) {
-		this.msgBus.publish('PICKER_CANCEL', e);
-		this.scrollHelper.beforeClose();
-		this.destory();
+		var self = this;
+		
+		Utils.animationEndHandler(this.find('.C_Picker_container'), function(){
+			self.msgBus.publish('PICKER_CANCEL', e);
+			self.scrollHelper.beforeClose();
+			self.destory();
+		});
+
+		this.find('.C_Picker_container').addClass('animate-slide-down');
 	}
 
 	Picker.prototype.okClick_event = function(e) {
-		this.scrollHelper.beforeClose();
-		this.msgBus.publish('PICKER_CONFIRM', e);
+		var self = this;
+		
+		Utils.animationEndHandler(this.find('.C_Picker_container'), function(){
+			self.scrollHelper.beforeClose();
+			self.msgBus.publish('PICKER_CONFIRM', e);
+		});
+
+		this.find('.C_Picker_container').addClass('animate-slide-down');
+		
 	}
 
 	Picker.prototype.pickerItemClick_event = function(e) {

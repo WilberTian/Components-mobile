@@ -54,12 +54,24 @@ define([
 	    };
 	}
 
+	function transitionEndHandler($el, callback) {
+		$el.on("webkitTransitionEnd", callback);
+		$el.on("transitionend", callback);
+	}
+
+	function animationEndHandler($el, callback) {
+		$el.on("webkitAnimationEnd", callback);
+		$el.on("animationend", callback);
+	}
+
 	return {
 		inherit: inherit,
 		guid: guid,
 		logDebugMsg: logDebugMsg,
 		noop: function() {},
-		scrollHelper: scrollHelper
+		scrollHelper: scrollHelper,
+		transitionEndHandler: transitionEndHandler,
+		animationEndHandler: animationEndHandler
 	}
 });
 
