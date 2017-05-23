@@ -107,33 +107,3 @@
     transform: scaleY(0.5);
 }
 
-.animate-slide-up {
-    -webkit-animation: slideUp ease .3s forwards;
-    animation: slideUp ease .3s forwards;
-}
-
-@keyframes slideUp {
-    from {
-        transform: translate(0, 0);
-    }
-
-    to {
-        transform: translate(0, -100%);
-    }
-}
-
-.animate-slide-down {
-    -webkit-animation: slideDown ease .3s forwards;
-    animation: slideDown ease .3s forwards;
-}
-
-@keyframes slideDown {
-    from {
-        transform: translate(0, -100%);
-    }
-
-    to {
-        transform: translate(0, 0);
-    }
-}
-
